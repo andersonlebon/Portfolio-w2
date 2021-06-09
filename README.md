@@ -1,5 +1,7 @@
 ## My Portfolio
 
+> see ![_home_anderson_Downloads_Compressed_Portfolio-development_index html](https://user-images.githubusercontent.com/65068771/121324754-50134800-c911-11eb-8097-23739bd801ca.png)
+
 ## Description
 
 > The main purposes of the project are:
@@ -50,7 +52,7 @@ For tracking linter errors locally you need to follow these steps:
 
 ## :handshake: Contributing
 
-Feel free to check the [issues page](https://github.com/andersonlebon/Portfolio/issues)
+Feel free to check the [issues page](https://github.com/andersonlebon/Portfolio-w2/issues)
 
 ## Show your support
 
