@@ -16,13 +16,13 @@ This project is build with:
 - HTML
 - CSS
 
-[Link Demo](https://andersonlebon.github.io/Portfolio/)
+[Link Demo](https://andersonlebon.github.io/Portfolio-w2/)
 
 ## Getting Started
 
 To get the content of this project locally you need to run this command in your terminal:
 
-- ` git clone https://github.com/andersonlebon/Portfolio.git`
+- ` git clone https://github.com/andersonlebon/Portfolio-w2.git`
 
 ## Test
 
