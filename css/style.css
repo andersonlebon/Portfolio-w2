@@ -325,3 +325,11 @@ button:focus {
 .langag-content .langag-btn button {
   background-color: #ffff;
 }
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
