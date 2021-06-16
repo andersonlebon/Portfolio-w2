@@ -539,7 +539,8 @@ button:focus {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -552,9 +553,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
@@ -674,7 +679,8 @@ button:focus {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -683,9 +689,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
