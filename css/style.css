@@ -449,6 +449,7 @@ button:focus {
 .footer-icons {
   margin: 10px;
 }
+
 @media only screen and (min-width: 1163px) {
   .header {
     justify-content: center;
@@ -594,5 +595,146 @@ button:focus {
   .footer-icons li a i {
     font-size: 20px;
     padding: 0;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1163px) {
+  .header {
+    justify-content: center;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    background: #ffff;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+  }
+
+  .header h2 {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-bar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-section {
+    background-image: url(../images/Header-llustration-desktop.svg);
+    background-size: cover;
+    height: 100vh;
+    justify-content: flex-start;
+    padding-bottom: 398px;
+    padding-top: 200px;
+  }
+
+  .s-container {
+    width: 48%;
+    padding: 0;
+    margin: 24px 0;
+  }
+
+  .scroll {
+    margin: 50px 0;
+  }
+
+  .title {
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .title h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .title img {
+    display: none;
+  }
+
+  .form-container p {
+    width: 100%;
+    font-size: 30px;
+    margin: 0;
+    padding: 45px 0;
+  }
+
+  .about-langues .about p {
+    width: 50%;
+    padding: 0 100px;
+  }
+
+  .about img {
+    display: none;
+  }
+
+  .about {
+    background-image: url(../images/illustration-about-me-desktop.svg),
+      url(../images/illustration-about-me-2-desktop.svg);
+    background-size: 70%, 14%;
+    background-position: top right, bottom 25px left;
+    background-repeat: no-repeat, no-repeat;
+    height: 280px;
+  }
+
+  .aboutContact {
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+      url(../images/illustration-2-contact-form-desktop.png);
+    background-position: bottom 80px left, bottom 55px right,
+      bottom 120px left 200px;
+  }
+
+  .form-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-container {
+    width: 100%;
+    grid-gap: 50px;
+    grid-template-columns: repeat(2, 327px);
+  }
+
+  .langues {
+    display: grid;
+    grid-gap: 30px 0;
+    grid-template-columns: repeat(2, 368px);
+    grid-auto-rows: 359px;
+  }
+
+  .chirld-3 {
+    grid-column: 1 /-1;
+  }
+
+  .footer-icons {
+    width: 100%;
+    border-top: 1px solid #dfe1e6;
+    padding: 15px 0;
+    margin: 140px 0 0 0;
+  }
+
+  .footer-icons li a {
+    padding: 10px;
+  }
+
+  .footer-icons li a i {
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .email-link {
+    display: none;
+  }
+
+  footer hr {
+    display: none;
   }
 }
