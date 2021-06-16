@@ -15,11 +15,16 @@
     <header class="header">
       <h2>Welcome</h2>
       <nav>
-        <i class="fa fa-bars fa-2x"></i>
+        <span><i class="fa hamburger fa-bars fa-2x"></i></span>
+        <ul class="nav-bar-list">
+          <li><a href="#home">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </header>
     <main class="display">
-      <section class="main-section">
+      <section id="home" class="main-section">
         <div class="s-container">
           <h1 class="present">Hey there. I’m Anderson</h1>
           <h2 class="present">I’m a software developer</h2>
@@ -59,7 +64,9 @@
           </ul>
         </div>
         <div class="scroll">
-          <img src="./images/icons/Disabled.png" alt="scroll icon" />
+          <a href="#email-link"
+            ><img src="./images/icons/Disabled.png" alt="scroll icon"
+          /></a>
         </div>
       </section>
       <section class="section-2">
@@ -102,10 +109,78 @@
               </div>
             </div>
           </li>
+          <li>
+            <div class="card">
+              <div class="image"></div>
+              <div class="card-info">
+                <h2>Multi-Post Stories Gain+Glory</h2>
+                <ul class="card-buttons">
+                  <li><button type="button">Ruby on rails</button></li>
+                  <li><button type="button">Css</button></li>
+                  <li><button type="button">JavaScript</button></li>
+                  <li><button type="button">Html</button></li>
+                </ul>
+                <button type="button" class="card-see button-gren">
+                  See Project
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="image"></div>
+              <div class="card-info">
+                <h2>Multi-Post Stories Gain+Glory</h2>
+                <ul class="card-buttons">
+                  <li><button type="button">Ruby on rails</button></li>
+                  <li><button type="button">Css</button></li>
+                  <li><button type="button">JavaScript</button></li>
+                  <li><button type="button">Html</button></li>
+                </ul>
+                <button type="button" class="card-see button-gren">
+                  See Project
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="image"></div>
+              <div class="card-info">
+                <h2>Multi-Post Stories Gain+Glory</h2>
+                <ul class="card-buttons">
+                  <li><button type="button">Ruby on rails</button></li>
+                  <li><button type="button">Css</button></li>
+                  <li><button type="button">JavaScript</button></li>
+                  <li><button type="button">Html</button></li>
+                </ul>
+                <button type="button" class="card-see button-gren">
+                  See Project
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="image"></div>
+              <div class="card-info">
+                <h2>Multi-Post Stories Gain+Glory</h2>
+                <ul class="card-buttons">
+                  <li><button type="button">Ruby on rails</button></li>
+                  <li><button type="button">Css</button></li>
+                  <li><button type="button">JavaScript</button></li>
+                  <li><button type="button">Html</button></li>
+                </ul>
+                <button type="button" class="card-see button-gren">
+                  See Project
+                </button>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
       <section class="about-langues">
-        <div class="about">
+        <div id="about" class="about">
           <h2>About me</h2>
           <p>
             I can help you build a product , feature or website Look through
@@ -143,7 +218,7 @@
               <li><button type="button">Selenium</button></li>
             </ul>
           </li>
-          <li class="langag-content card">
+          <li class="langag-content chirld-3 card">
             <img src="./images/icons/icon-skills.svg" alt="Language-icon" />
             <h2>Skills</h2>
             <ul class="langag-btn">
@@ -157,17 +232,42 @@
         </ul>
       </section>
     </main>
-    <footer class="aboutContact">
-      <p>
-        I'm alwyas ineterested in hearing about new projects, so if you'd 
-        like to chat please get in touch.
-      </p>
-      <form action="https://formspree.io/f/xzbygvyd" method="POST" class="contactForm">
-        <input type="text" name="user_name" placeholder="Full Name" maxlength="30" required>
-        <input type="email" name="user_email" placeholder="Email address" required>
-        <textarea name="user_text" maxlength="500" placeholder="Enter text here" required></textarea>
-        <button type="submit" class="card-see button-gren gren-btn-f">Get in Touch</button>
-      </form>
+    <footer id="contact" class="aboutContact">
+      <div class="form-container">
+        <p>
+          I'm alwyas ineterested in hearing about new projects, so if you'd like
+          to chat please get in touch.
+        </p>
+
+        <form
+          action="https://formspree.io/f/xzbygvyd"
+          method="POST"
+          class="contactForm"
+        >
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Full Name"
+            maxlength="30"
+            required
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Email address"
+            required
+          />
+          <textarea
+            name="user_text"
+            maxlength="500"
+            placeholder="Enter text here"
+            required
+          ></textarea>
+          <button type="submit" class="card-see button-gren gren-btn-f">
+            Get in Touch
+          </button>
+        </form>
+      </div>
       <ul class="social-media-links footer-icons">
         <li class="git">
           <a href="https://github.com/andersonlebon">
@@ -190,13 +290,13 @@
           ></a>
         </li>
         <li>
-          <a href="#">
-            <i class="fa fa-medium fa-2x" aria-hidden="true"></i
-          ></a>
+          <a href="#"> <i class="fa fa-medium fa-2x" aria-hidden="true"></i></a>
         </li>
       </ul>
-       <div class="email-link"><p>buyananderson@gmail.com </p></div>
-       <hr>
+      <div id="email-link" class="email-link">
+        <p>buyananderson@gmail.com</p>
+      </div>
+      <hr />
     </footer>
   </body>
 </html>

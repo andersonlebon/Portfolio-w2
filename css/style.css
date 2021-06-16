@@ -35,7 +35,7 @@ main {
   position: relative;
   text-align: center;
   font-size: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 200px;
 }
 
 .s-container {
@@ -69,6 +69,46 @@ main {
   color: #28352f;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger {
+  display: block;
+}
+
+.nav-bar-list {
+  display: none;
+}
+
+.social-media-links a {
+  padding: 0 15px;
+  color: #505f79;
+  font-size: 15px;
+}
+
+.nav-bar-list li {
+  padding: 10px 12px;
+}
+
+.nav-bar-list li a {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #344563;
+  text-decoration: none;
+}
+
 .detail {
   font-size: 20px;
   line-height: 32px;
@@ -86,12 +126,6 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.social-media-links a {
-  padding: 0 15px;
-  color: #505f79;
-  font-size: 15px;
 }
 
 .scroll {
@@ -176,12 +210,6 @@ main {
   margin: 16px;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .card-buttons {
   width: 100%;
   display: flex;
@@ -259,7 +287,7 @@ ul {
   line-height: 52px;
   text-align: center;
   color: #172b4d;
-  padding: 5px;
+  padding: 15px;
   margin-bottom: 20px;
 }
 
@@ -275,8 +303,9 @@ ul {
 .about-langues .about p {
   font-size: 20px;
   line-height: 32px;
-  max-width: 335px;
+  width: 80%;
   margin-top: 0;
+  text-align: center;
   color: #42526e;
 }
 
@@ -355,16 +384,21 @@ button:focus {
 }
 
 .aboutContact {
-  background: url(../images/Frame.svg)  no-repeat;
+  background: url(../images/Frame.svg) no-repeat;
   background-position: bottom 275px right 0;
+  background-size: 10%;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 }
 
-.contactForm input {
+.form-container {
   width: 85%;
+}
+
+.contactForm input {
+  width: 100%;
   margin: 12px 0;
   height: 48px;
   border: 1px solid #d0d9d4;
@@ -376,7 +410,7 @@ button:focus {
 }
 
 .contactForm textarea {
-  width: 85%;
+  width: 100%;
   height: 105px;
   border-radius: 4px;
   border: 1px solid #60c095;
