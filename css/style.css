@@ -449,3 +449,150 @@ button:focus {
 .footer-icons {
   margin: 10px;
 }
+@media only screen and (min-width: 1163px) {
+  .header {
+    justify-content: center;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    background: #ffff;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+  }
+
+  .header h2 {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-bar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-section {
+    background-image: url(../images/Header-llustration-desktop.svg);
+    background-size: cover;
+    height: 100vh;
+    justify-content: flex-start;
+    padding-bottom: 398px;
+    padding-top: 300px;
+  }
+
+  .s-container {
+    width: 48%;
+    padding: 0;
+    margin: 24px 0;
+  }
+
+  .scroll {
+    margin: 50px 0;
+  }
+
+  .title {
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .title h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .title img {
+    display: none;
+  }
+
+  .card-container {
+    width: 100%;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 327px);
+  }
+
+  .langues {
+    display: grid;
+    width: 100%;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 368px);
+    grid-auto-rows: 359px;
+    padding: 48px 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-container p {
+    width: 40%;
+    margin: 0;
+    padding: 40px 0;
+    font-size: 30px;
+  }
+
+  .about-langues .about p {
+    width: 50%;
+    padding: 0 100px;
+  }
+
+  .about {
+    background-image: url(../images/illustration-about-me-desktop.svg),
+      url(../images/illustration-about-me-2-desktop.svg);
+    background-size: 70%, 14%;
+    background-position: top right, bottom 25px left;
+    background-repeat: no-repeat, no-repeat;
+    height: 280px;
+  }
+
+  .about img {
+    display: none;
+  }
+
+  .aboutContact {
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+      url(../images/illustration-2-contact-form-desktop.png);
+    background-position: bottom 80px left, bottom 55px right,
+      bottom 120px left 200px;
+  }
+
+  .email-link {
+    display: none;
+  }
+
+  footer hr {
+    display: none;
+  }
+
+  .form-container {
+    display: flex;
+    width: 1100px;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .form-container form {
+    width: 60%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0 0 0 24px;
+  }
+
+  .footer-icons {
+    width: 100%;
+    border-top: 1px solid #dfe1e6;
+    padding: 15px 0;
+    margin: 140px 0 0 0;
+  }
+
+  .footer-icons li a {
+    padding: 10px;
+  }
+
+  .footer-icons li a i {
+    font-size: 20px;
+    padding: 0;
+  }
+}
