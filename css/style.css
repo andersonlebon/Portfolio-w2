@@ -190,6 +190,7 @@ ul {
   transform: scale(1.05);
   transition: all 0.4s ease;
 }
+
 .card .image {
   height: 60%;
   width: 100%;
