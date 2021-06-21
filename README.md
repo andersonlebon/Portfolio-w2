@@ -1,6 +1,12 @@
-## My Portfolio
+# My Portfolio
 
 ## Description
+
+> ## see Here 
+Mobile version | Desktop version
+-------------------- | ----------------------
+![andersonlebon github io_Portfolio-w2_](https://user-images.githubusercontent.com/65068771/122742421-37e2e780-d286-11eb-9d93-bd2c07a122b7.png "Click on the live demo if you want to see more") | ![Screenshot from 2021-06-21 11-05-48](https://user-images.githubusercontent.com/65068771/122742352-239eea80-d286-11eb-8fd8-def67fca395d.png "Click on the live demo if you want to see more")
+
 
 > The main purposes of the project are:
 
@@ -16,7 +22,7 @@ This project is build with:
 - HTML
 - CSS
 
-[Link Demo](https://andersonlebon.github.io/Portfolio-w2/)
+[Link Demo](https://andersonlebon.github.io/Portfolio-w2/ "Click here to see more")
 
 ## Getting Started
 
@@ -30,15 +36,15 @@ For tracking linter errors locally you need to follow these steps:
 
 - After cloning the project you need to run this command
 
-  > npm install
+  > `npm install`
   > This command will download all the dependancies of the project
 
 - For tracking the linter errors in HTML file run:
 
-  > npx hint .
+  > `npx hint .`
 
 - And for tracking the linter errors in CSS file run:
-  > npx stylelint "\*_/_.{css,scss}"
+  > `npx stylelint "\*_/_.{css,scss}"`
 
 ## Author
 
@@ -59,4 +65,4 @@ Give a :star: if you like this project!
 ## Acknowledgments
 
 - Thanks to [Microvers](www.microverse.org) team that help with the tamplete of this project
-- Thanks to everyone who will get time to check this code.
+- Thanks to everyone who will get time to check this code especially to code reviewers.
