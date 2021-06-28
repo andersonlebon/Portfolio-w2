@@ -455,6 +455,60 @@ button:focus {
   margin: 10px;
 }
 
+.mob-menu {
+  height: 95vh;
+  background-color: #ffff;
+  position: relative;
+  align-items: flex-start;
+  box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
+  border-radius: 0 0 50px 50px;
+}
+.cancel-icon {
+  display: none;
+}
+.mob-menu h2 {
+  display: none;
+}
+
+.mob-menu .cancel-icon {
+  position: absolute;
+  display: block;
+  z-index: 100;
+  top: 0;
+  right: 10px;
+  margin: 20px;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.mob-menu nav {
+  width: 100%;
+  flex-direction: column;
+}
+
+.mob-menu ul {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.mob-menu .mob-burger {
+  display: none;
+}
+
+.mob-menu nav .mob-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mob-menu nav .mob-list li a {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #3a4a42;
+}
+
+/* styling the menu of the mobile version */
+
 @media only screen and (min-width: 1163px) {
   .header {
     justify-content: center;
