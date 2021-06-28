@@ -454,17 +454,39 @@ button:focus {
   margin: 10px;
 }
 
+.show-header {
+  animation: animateMenu 2s ease-in-out 1;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+@keyframes animateMenu {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    background-color: #d0d9d4;
+    transform: translateY(0);
+  }
+}
+
 .mob-menu {
   height: 95vh;
   background-color: #ffff;
-  position: relative;
   align-items: flex-start;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   border-radius: 0 0 50px 50px;
 }
+
 .cancel-icon {
   display: none;
 }
+
 .mob-menu h2 {
   display: none;
 }
@@ -597,7 +619,8 @@ button:focus {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -610,9 +633,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
@@ -732,7 +759,8 @@ button:focus {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -741,9 +769,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
