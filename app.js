@@ -1,12 +1,13 @@
-let cancelIcon = document.querySelector("#cancel-icon");
-let menu = document.querySelector(".header");
-const humburger = document.querySelector("#hamburger");
+const cancelIcon = document.querySelector('#cancel-icon');
+const menu = document.querySelector('.header');
+const humburger = document.querySelector('#hamburger');
+let console;
 
-humburger.addEventListener("click", () => {
-  menu.classList.add("mob-menu");
+humburger.addEventListener('click', () => {
+  menu.classList.add('mob-menu');
 });
 
-cancelIcon.addEventListener("click", function () {
-  menu.classList.remove("mob-menu");
-  console.log("hello");
+cancelIcon.addEventListener('click', () => {
+  menu.classList.remove('mob-menu');
+  console.log('hello');
 });
