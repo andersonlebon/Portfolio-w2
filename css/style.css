@@ -7,6 +7,10 @@ html {
   padding: 0;
 }
 
+.scroll {
+  overflow-y: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -18,6 +22,10 @@ body {
 main {
   width: 100%;
   overflow: hidden;
+}
+
+.display {
+  z-index: -1;
 }
 
 .main-section {
@@ -55,10 +63,18 @@ main {
 
 .header {
   padding: 0 30px;
+  position: fixed;
+  background: #ffff;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  z-index: 99;
   font-weight: normal;
+  width: auto;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 1px 30px rgba(197, 196, 196, 0.267);
 }
 
 .header h2 {
@@ -454,39 +470,17 @@ button:focus {
   margin: 10px;
 }
 
-.show-header {
-  animation: animateMenu 2s ease-in-out 1;
-  transition: all 0.2s ease-in-out;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
-@keyframes animateMenu {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    background-color: #d0d9d4;
-    transform: translateY(0);
-  }
-}
-
 .mob-menu {
   height: 95vh;
   background-color: #ffff;
+  position: relative;
   align-items: flex-start;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   border-radius: 0 0 50px 50px;
 }
-
 .cancel-icon {
   display: none;
 }
-
 .mob-menu h2 {
   display: none;
 }
@@ -528,17 +522,120 @@ button:focus {
   color: #3a4a42;
 }
 
+/* styling the popup window */
+
+.popup-window {
+  width: 100%;
+  position: fixed;
+  background: #c1c7d0;
+  height: 100vh;
+  /* padding: 4rem 0; */
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  z-index: 999;
+}
+
+.bgFilter {
+  filter: blur(3px);
+  z-index: -100;
+  background: #c1c7d0;
+  opacity: 0.9;
+  position: absolute;
+  height: 131vh;
+  top: 0;
+  width: 100%;
+}
+
+.cancelPop {
+  z-index: 999;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5%;
+}
+
+.popup-window .pop-container {
+  background-color: #ffff;
+  position: relative;
+  /* z-index: -999; */
+  margin: 6% 0;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid #def1e6;
+  box-sizing: border-box;
+  /* mix-blend-mode: multiply; */
+}
+
+.pop-container p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #344563;
+}
+
+.pop-container .pop-img-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.pop-img-container img {
+  width: 100%;
+}
+
+.heading2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #172b4d;
+}
+
+.popup-window .pop-button {
+  justify-content: flex-start;
+  width: 90%;
+}
+.pop-button li {
+  margin-right: 8px;
+}
+
+.pop-container .see-btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.see-btn .button-gren {
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.see-btn .button-gren span {
+  padding: 12px;
+}
+.see-btn .button-gren img {
+  padding-right: 12px;
+}
 /* styling the menu of the mobile version */
 
 @media only screen and (min-width: 1163px) {
   .header {
     justify-content: center;
     padding: 16px 0;
-    position: fixed;
+    width: 100%;
     top: 0;
     background: #ffff;
-    z-index: 10;
-    width: 100%;
     height: auto;
   }
 
@@ -619,8 +716,7 @@ button:focus {
   }
 
   .about {
-    background-image:
-      url(../images/illustration-about-me-desktop.svg),
+    background-image: url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -633,13 +729,9 @@ button:focus {
   }
 
   .aboutContact {
-    background-image:
-      url(../images/Frame@2x-1.png),
-      url(../images/Frame@2x.png),
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position:
-      bottom 80px left,
-      bottom 55px right,
+    background-position: bottom 80px left, bottom 55px right,
       bottom 120px left 200px;
   }
 
@@ -759,8 +851,7 @@ button:focus {
   }
 
   .about {
-    background-image:
-      url(../images/illustration-about-me-desktop.svg),
+    background-image: url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -769,13 +860,9 @@ button:focus {
   }
 
   .aboutContact {
-    background-image:
-      url(../images/Frame@2x-1.png),
-      url(../images/Frame@2x.png),
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position:
-      bottom 80px left,
-      bottom 55px right,
+    background-position: bottom 80px left, bottom 55px right,
       bottom 120px left 200px;
   }
 
