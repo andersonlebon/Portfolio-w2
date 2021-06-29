@@ -5,13 +5,24 @@ const main = document.querySelector('main');
 const humburger = document.querySelector('#hamburger');
 const seeButton = document.querySelectorAll('.show-popup');
 const html = document.querySelector('html');
+const cardContainer = document.querySelector('.card-container');
 const mobileData = [
   {
     id: 'project1',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: './images/Snapshoot PortfolioMob.png',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '11Keeping track of hundreds of components',
     list: [
       {
@@ -29,9 +40,19 @@ const mobileData = [
   {
     id: 'project2',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: './images/Snapshoot Portfolio.png',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '222Keeping track of hundreds of components',
     list: [
       {
@@ -49,9 +70,19 @@ const mobileData = [
   {
     id: 'project3',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: './images/Snapshoot Portfoliothree.png',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '33Keeping track of hundreds of components',
     list: [
       {
@@ -70,8 +101,18 @@ const mobileData = [
     id: 'project4',
     images: {
       img: './images/Snapshoot Portfolio.svg',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '4Keeping track of hundreds of components',
     list: [
       {
@@ -90,8 +131,18 @@ const mobileData = [
     id: 'project5',
     images: {
       img: './images/Snapshoot Portfolio.svg',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '5Keeping track of hundreds of components',
     list: [
       {
@@ -110,8 +161,18 @@ const mobileData = [
     id: 'project6',
     images: {
       img: './images/Snapshoot Portfolio.svg',
+      cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: ['Ruby on Rails', 'Css', 'Javascript'],
+    techno: [
+      'Ruby on Rails',
+      'Css',
+      'Javascript',
+      'Github',
+      'Bootstrap',
+      'Terminal',
+      'Codepen',
+      'Codekit',
+    ],
     heading: '6Keeping track of hundreds of components',
     list: [
       {
@@ -128,7 +189,50 @@ const mobileData = [
   },
 ];
 
+let project = 1;
 const sections = [];
+const cards = [];
+mobileData.forEach((asection) => {
+  const li = document.createElement('li');
+  li.innerHTML = `<div class='card'>
+    <div class='image'></div>
+    <div class='card-info'>
+      <h2>Multi-Post Stories Gain+Glory</h2>
+      <ul class='card-buttons'>
+       ${asection.techno
+         .map(
+           (atechno) => `<li>
+          <button type='button'>${atechno}</button>
+        </li>`
+         )
+         .join('')}
+      </ul>
+      <button type='button' class='card-see button-gren show-popup'>
+        See Project
+      </button>
+    </div>
+  </div>`;
+  // cardContainer.appendChild(li);
+  cards.push(li);
+});
+// const card = cardContainer.children;
+// console.log();
+cards.forEach((card) => {
+  cardContainer.appendChild(card);
+  // let btn = card.children;
+  const btn = card.querySelector('.show-popup');
+  // deletBtn = deletBtn.children;
+  // deletBtn = card.children;
+
+  btn.id = `project${project}`;
+  project += 1;
+  btn.addEventListener('click', () => {
+    const showSection = sections.filter((section) => section.id === btn.id);
+    console.log('hello');
+    main.appendChild(showSection[0]);
+    html.classList.add('scrollHtml');
+  });
+});
 
 mobileData.forEach((asection) => {
   const section = document.createElement('section');
@@ -138,6 +242,7 @@ mobileData.forEach((asection) => {
   const imageContainer = document.createElement('div');
   const heading2 = document.createElement('h2');
   const img = document.createElement('img');
+  const cancel = document.createElement('img');
   const list = document.createElement('ul');
   const paragraph = document.createElement('p');
   section.className = 'popup-window';
@@ -149,6 +254,8 @@ mobileData.forEach((asection) => {
   bgFilter.className = 'bgFilter';
   cancelPop.className = 'cancelPop';
   heading2.className = 'heading2';
+  cancel.src = asection.images.cancelPop;
+  cancel.classList = 'iconCancel';
 
   img.src = asection.images.img;
   paragraph.innerText = asection.paragraph;
@@ -161,7 +268,9 @@ mobileData.forEach((asection) => {
   container.appendChild(list);
   container.appendChild(paragraph);
   section.appendChild(bgFilter);
+  cancelPop.appendChild(cancel);
   imageContainer.appendChild(cancelPop);
+
   let listTech = [];
   let listBtn = [];
   const divGreenBtn = document.createElement('div');
@@ -186,8 +295,8 @@ mobileData.forEach((asection) => {
   sections.push(section);
   cancelPop.addEventListener('click', () => {
     const child = main.children[3];
+    html.classList.remove('scrollHtml');
     main.removeChild(child);
-    html.classList.remove('scroll');
   });
 });
 
@@ -197,16 +306,4 @@ humburger.addEventListener('click', () => {
 
 cancelIcon.addEventListener('click', () => {
   menu.classList.remove('mob-menu');
-});
-
-let project = 1;
-seeButton.forEach((btn) => {
-  btn.id = `project${project}`;
-  project += 1;
-  btn.addEventListener('click', () => {
-    const showSection = sections.filter((section) => section.id === btn.id);
-    console.log('hello');
-    main.appendChild(showSection[0]);
-    html.classList.add('scroll');
-  });
 });

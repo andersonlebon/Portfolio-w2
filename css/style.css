@@ -7,7 +7,7 @@ html {
   padding: 0;
 }
 
-.scroll {
+.scrollHtml {
   overflow-y: hidden;
 }
 
@@ -238,6 +238,12 @@ ul {
   align-items: center;
 }
 
+.card-buttons li:nth-child(5),
+.card-buttons li:nth-child(6),
+.card-buttons li:nth-child(7),
+.card-buttons li:nth-child(8) {
+  display: none;
+}
 .card-buttons button {
   padding: 8px 12px;
   font-size: 13px;
@@ -478,9 +484,11 @@ button:focus {
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   border-radius: 0 0 50px 50px;
 }
+
 .cancel-icon {
   display: none;
 }
+
 .mob-menu h2 {
   display: none;
 }
@@ -527,21 +535,27 @@ button:focus {
 .popup-window {
   width: 100%;
   position: fixed;
-  background: #c1c7d0;
+  background: #c1c7d05e;
   height: 100vh;
-  /* padding: 4rem 0; */
+  /* padding: 3rem */
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   top: 0;
   z-index: 999;
+  transition: all 0.4s ease-in-out;
+}
+
+.scrollHtml .hide-pop {
+  transform: translate(-400px, 500px) rotateZ(50deg) scale(0.1);
+  opacity: 0;
 }
 
 .bgFilter {
-  filter: blur(3px);
+  /* filter: blur(3px); */
   z-index: -100;
-  background: #c1c7d0;
+  background: transparent;
   opacity: 0.9;
   position: absolute;
   height: 131vh;
@@ -551,28 +565,54 @@ button:focus {
 
 .cancelPop {
   z-index: 999;
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: 5%;
+  top: 15px;
+  right: 15px;
+  background: #ebecf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  /* margin: 5%; */
+}
+.cancelPop img {
+  width: 90%;
+  height: 90%;
+}
+
+.scrollHtml .display .section-2,
+.scrollHtml .display .about-langues,
+.scrollHtml .display .main-section,
+.scrollHtml .header {
+  filter: blur(10px);
+  z-index: -1;
 }
 
 .popup-window .pop-container {
   background-color: #ffff;
   position: relative;
-  /* z-index: -999; */
   margin: 6% 0;
   width: 90%;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   border-radius: 16px;
   padding: 15px;
   border: 1px solid #def1e6;
   box-sizing: border-box;
-  /* mix-blend-mode: multiply; */
+}
+
+.pop-button li:nth-child(4),
+.pop-button li:nth-child(5),
+.pop-button li:nth-child(6),
+.pop-button li:nth-child(7),
+.pop-button li:nth-child(8) {
+  display: none;
 }
 
 .pop-container p {
@@ -593,7 +633,7 @@ button:focus {
 
 .heading2 {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 1.4rem;
   line-height: 44px;
   color: #172b4d;
 }
@@ -602,34 +642,128 @@ button:focus {
   justify-content: flex-start;
   width: 90%;
 }
+
 .pop-button li {
   margin-right: 8px;
 }
 
 .pop-container .see-btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0;
 }
 
 .see-btn .button-gren {
   display: flex;
-  padding: 12px;
   justify-content: space-between;
   align-items: center;
   padding: 0 5px;
   margin: 0;
 }
 
+.button-gren:last-child {
+  margin-left: 10px;
+}
+
 .see-btn .button-gren span {
   padding: 12px;
 }
+
 .see-btn .button-gren img {
   padding-right: 12px;
 }
+
+.pop-container .pop-button li .button {
+  color: #344563;
+}
+
 /* styling the menu of the mobile version */
 
 @media only screen and (min-width: 1163px) {
+  .popup-window .pop-container {
+    margin: 8% 0;
+    width: 60%;
+    position: relative;
+    padding: 60px 24px;
+  }
+
+  /* .popup-window {
+    background: #c1c7d05e;
+  }
+
+  .bgFilter {
+    background-color: transparent;
+  } */
+
+  .pop-img-container {
+    position: initial;
+  }
+
+  .cancelPop {
+    z-index: 999;
+    /* background-color: black; */
+    top: -50px;
+    right: 0px;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #ebecf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    /* margin: 5%; */
+  }
+
+  .cancelPop .iconCancel {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pop-container .pop-button:nth-child(4) {
+    display: none;
+  }
+
+  .pop-button li:nth-child(4),
+  .pop-button li:nth-child(5),
+  .pop-button li:nth-child(6),
+  .pop-button li:nth-child(7),
+  .pop-button li:nth-child(8) {
+    display: block;
+  }
+
+  .pop-button li:last-child {
+    display: none;
+  }
+
+  .pop-container .see-btn {
+    justify-content: flex-end;
+    width: 67%;
+    margin-left: auto;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    height: 100%;
+  }
+
+  .pop-container h2 {
+    width: 50%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    font-size: 30px;
+    line-height: 44px;
+    color: #172b4d;
+    margin: 15px 0;
+  }
+
+  .pop-container .see-btn .button-gren {
+    margin: 10px 0 70px 12px;
+    height: 40px;
+    width: auto;
+  }
+
   .header {
     justify-content: center;
     padding: 16px 0;
@@ -775,7 +909,92 @@ button:focus {
   }
 }
 
-@media (min-width: 750px) and (max-width: 1163px) {
+@media (min-width: 900px) and (max-width: 1163px) {
+  .popup-window .pop-container {
+    margin: 10% 0;
+    width: 70%;
+    position: relative;
+    padding: 60px 24px;
+    display: grid;
+  }
+
+  /* .popup-window {
+    background: #c1c7d05e;
+  }
+
+  .bgFilter {
+    background-color: transparent;
+  } */
+
+  .pop-img-container {
+    position: initial;
+    order: -2;
+  }
+
+  .cancelPop {
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #ebecf0;
+    /* background-color: black; */
+    top: -50px;
+    right: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    /* margin: 5%; */
+  }
+
+  .cancelPop .iconCancel {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pop-container .pop-button:nth-child(4) {
+    display: none;
+  }
+
+  .pop-button li:nth-child(4),
+  .pop-button li:nth-child(5),
+  .pop-button li:nth-child(6),
+  .pop-button li:nth-child(7),
+  .pop-button li:nth-child(8) {
+    display: block;
+  }
+
+  .pop-button li:last-child {
+    display: none;
+  }
+
+  .pop-container .see-btn {
+    justify-content: flex-end;
+    width: 67%;
+    margin-left: auto;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    height: 100%;
+  }
+
+  .pop-container h2 {
+    width: 50%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    line-height: 44px;
+    color: #172b4d;
+    margin: 15px 0;
+  }
+
+  .pop-container .see-btn .button-gren {
+    margin: 20px 0 70px 12px;
+    height: 40px;
+    width: auto;
+  }
+
   .header {
     justify-content: center;
     padding: 16px 0;
