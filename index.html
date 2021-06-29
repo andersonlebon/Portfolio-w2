@@ -11,28 +11,20 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>My Portfolio</title>
   </head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-15DDR4PEKX"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-15DDR4PEKX");
-  </script>
-
   <body>
     <header class="header">
       <h2>Welcome</h2>
       <nav>
-        <span><i class="fa hamburger fa-bars fa-2x"></i></span>
-        <ul class="nav-bar-list">
+        <span id="hamburger"
+          ><i class="fa hamburger fa-bars fa-2x mob-burger"></i
+        ></span>
+        <img
+          id="cancel-icon"
+          class="cancel-icon"
+          src="./images/icons/IconCancel.png"
+          alt="image cancel icon"
+        />
+        <ul class="nav-bar-list mob-list">
           <li><a href="#home">Portfolio</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -54,28 +46,24 @@
           <ul class="social-media-links">
             <li class="git">
               <a href="https://github.com/andersonlebon">
-                <i class="fa fa-github fa-2x" aria-hidden="true"></i
+                <i class="fa fa-github fa-2x"></i
               ></a>
             </li>
             <li>
               <a href="https://twitter.com/BuyananaCaleb">
-                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i
+                <i class="fa fa-twitter fa-2x"></i
               ></a>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/anderson-caleb-915343209/">
-                <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i
+                <i class="fa fa-linkedin fa-2x"></i
               ></a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa fa-angellist fa-2x" aria-hidden="true"></i
-              ></a>
+              <a href="#"> <i class="fa fa-angellist fa-2x"></i></a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa fa-medium fa-2x" aria-hidden="true"></i
-              ></a>
+              <a href="#"> <i class="fa fa-medium fa-2x"></i></a>
             </li>
           </ul>
         </div>
@@ -260,22 +248,29 @@
           method="POST"
           class="contactForm"
         >
+          <label for="name"></label>
           <input
             type="text"
+            id="name"
             name="user_name"
             placeholder="Full Name"
             maxlength="30"
             required
           />
+          <label for="email"></label>
           <input
             type="email"
+            id="email"
             name="user_email"
             placeholder="Email address"
             required
           />
+
+          <label for="message"></label>
           <textarea
             name="user_text"
             maxlength="500"
+            id="message"
             placeholder="Enter text here"
             required
           ></textarea>
@@ -287,26 +282,24 @@
       <ul class="social-media-links footer-icons">
         <li class="git">
           <a href="https://github.com/andersonlebon">
-            <i class="fa fa-github fa-2x" aria-hidden="true"></i
+            <i class="fa fa-github fa-2x"></i
           ></a>
         </li>
         <li>
           <a href="https://twitter.com/BuyananaCaleb">
-            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i
+            <i class="fa fa-twitter fa-2x"></i
           ></a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/anderson-caleb-915343209/">
-            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i
+            <i class="fa fa-linkedin fa-2x"></i
           ></a>
         </li>
         <li>
-          <a href="#">
-            <i class="fa fa-angellist fa-2x" aria-hidden="true"></i
-          ></a>
+          <a href="#"> <i class="fa fa-angellist fa-2x"></i></a>
         </li>
         <li>
-          <a href="#"> <i class="fa fa-medium fa-2x" aria-hidden="true"></i></a>
+          <a href="#"> <i class="fa fa-medium fa-2x"></i></a>
         </li>
       </ul>
       <div id="email-link" class="email-link">
@@ -314,5 +307,6 @@
       </div>
       <hr />
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
