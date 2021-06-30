@@ -5,6 +5,11 @@ html {
   align-items: center;
   flex-direction: column;
   padding: 0;
+  scroll-behavior: smooth;
+}
+
+.scrollHtml {
+  overflow-y: hidden;
 }
 
 body {
@@ -13,11 +18,16 @@ body {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
+  scroll-snap-type: y mandatory;
 }
 
 main {
   width: 100%;
   overflow: hidden;
+}
+
+.display {
+  z-index: -1;
 }
 
 .main-section {
@@ -55,10 +65,18 @@ main {
 
 .header {
   padding: 0 30px;
+  position: fixed;
+  background: #ffff;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  z-index: 99;
   font-weight: normal;
+  width: auto;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 1px 30px rgba(197, 196, 196, 0.267);
 }
 
 .header h2 {
@@ -186,13 +204,40 @@ ul {
 }
 
 .card:hover {
+  z-index: 999;
   transform: scale(1.05);
   transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.card .project-bg {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #8f8f8f9f;
+}
+
+.card .project-bg:hover {
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .card .image {
-  height: 60%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 100%;
+}
+
+.project-img {
+  width: 95%;
+  height: 95%;
+  opacity: 0.8;
 }
 
 .card-info {
@@ -222,9 +267,20 @@ ul {
   align-items: center;
 }
 
+.pop-button li {
+  margin-right: 8px;
+}
+
+.card-buttons li:nth-child(5),
+.card-buttons li:nth-child(6),
+.card-buttons li:nth-child(7),
+.card-buttons li:nth-child(8) {
+  display: none;
+}
+
 .card-buttons button {
   padding: 8px 12px;
-  font-size: 13px;
+  font-size: 11px;
   color: #277e5a;
   font-weight: 600;
   border-radius: 4px;
@@ -454,30 +510,10 @@ button:focus {
   margin: 10px;
 }
 
-.show-header {
-  animation: animateMenu 2s ease-in-out 1;
-  transition: all 0.2s ease-in-out;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
-@keyframes animateMenu {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    background-color: #d0d9d4;
-    transform: translateY(0);
-  }
-}
-
 .mob-menu {
   height: 95vh;
   background-color: #ffff;
+  position: relative;
   align-items: flex-start;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   border-radius: 0 0 50px 50px;
@@ -528,17 +564,228 @@ button:focus {
   color: #3a4a42;
 }
 
+/* styling the popup window */
+
+.popup-window {
+  width: 100%;
+  position: fixed;
+  background: #c1c7d05e;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  z-index: 999;
+  transition: all 0.4s ease-in-out;
+}
+
+.scrollHtml .hide-pop {
+  transform: translate(-400px, 500px) rotateZ(50deg) scale(0.1);
+  opacity: 0;
+}
+
+.bgFilter {
+  /* filter: blur(3px); */
+  z-index: -100;
+  background: transparent;
+  opacity: 0.9;
+  position: absolute;
+  height: 131vh;
+  top: 0;
+  width: 100%;
+}
+
+.cancelPop {
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ebecf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.cancelPop:hover {
+  cursor: pointer;
+}
+
+.cancelPop img {
+  width: 90%;
+  height: 90%;
+}
+
+.scrollHtml .display .section-2,
+.scrollHtml .display .about-langues,
+.scrollHtml .display .main-section,
+.scrollHtml .header {
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.popup-window .pop-container {
+  background-color: #ffff;
+  position: relative;
+  margin: 6% 0;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid #def1e6;
+  box-sizing: border-box;
+}
+
+.pop-button li:nth-child(4),
+.pop-button li:nth-child(5),
+.pop-button li:nth-child(6),
+.pop-button li:nth-child(7),
+.pop-button li:nth-child(8) {
+  display: none;
+}
+
+.pop-container .pop-img-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.pop-img-container img {
+  width: 100%;
+}
+
+.heading2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 44px;
+  color: #172b4d;
+}
+
+.popup-window .pop-button {
+  justify-content: flex-start;
+  width: 90%;
+}
+
+.pop-container .see-btn {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.see-btn .button-gren {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.button-gren:last-child {
+  margin-left: 10px;
+}
+
+.see-btn .button-gren span {
+  padding: 12px;
+}
+
+.see-btn .button-gren img {
+  padding-right: 12px;
+}
+
+.pop-container .pop-button li .button {
+  color: #344563;
+}
+
 /* styling the menu of the mobile version */
 
 @media only screen and (min-width: 1163px) {
+  .popup-window .pop-container {
+    margin: 8% 0;
+    width: 60%;
+    position: relative;
+    padding: 60px 24px;
+  }
+
+  .pop-img-container {
+    position: initial;
+  }
+
+  .cancelPop {
+    z-index: 999;
+    top: -50px;
+    right: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #ebecf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .cancelPop .iconCancel {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pop-container .pop-button:nth-child(4) {
+    display: none;
+  }
+
+  .pop-button li:nth-child(4),
+  .pop-button li:nth-child(5),
+  .pop-button li:nth-child(6),
+  .pop-button li:nth-child(7),
+  .pop-button li:nth-child(8) {
+    display: block;
+  }
+
+  .pop-button li:last-child {
+    display: none;
+  }
+
+  .pop-container .see-btn {
+    justify-content: flex-end;
+    width: 67%;
+    margin-left: auto;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    height: 100%;
+  }
+
+  .pop-container h2 {
+    width: 50%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    font-size: 30px;
+    line-height: 44px;
+    color: #172b4d;
+    margin: 15px 0;
+  }
+
+  .pop-container .see-btn .button-gren {
+    margin: 10px 0 70px 12px;
+    height: 40px;
+    width: auto;
+  }
+
   .header {
     justify-content: center;
     padding: 16px 0;
-    position: fixed;
+    width: 100%;
     top: 0;
     background: #ffff;
-    z-index: 10;
-    width: 100%;
     height: auto;
   }
 
@@ -613,6 +860,12 @@ button:focus {
     font-size: 30px;
   }
 
+  .pop-container p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #344563;
+  }
+
   .about-langues .about p {
     width: 50%;
     padding: 0 100px;
@@ -683,7 +936,82 @@ button:focus {
   }
 }
 
-@media (min-width: 750px) and (max-width: 1163px) {
+@media (min-width: 900px) and (max-width: 1163px) {
+  .popup-window .pop-container {
+    margin: 10% 0;
+    width: 70%;
+    position: relative;
+    padding: 60px 24px;
+    display: grid;
+  }
+
+  .pop-img-container {
+    position: initial;
+    order: -2;
+  }
+
+  .cancelPop {
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #ebecf0;
+    top: -50px;
+    right: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .cancelPop .iconCancel {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pop-container .pop-button:nth-child(4) {
+    display: none;
+  }
+
+  .pop-button li:nth-child(4),
+  .pop-button li:nth-child(5),
+  .pop-button li:nth-child(6),
+  .pop-button li:nth-child(7),
+  .pop-button li:nth-child(8) {
+    display: block;
+  }
+
+  .pop-button li:last-child {
+    display: none;
+  }
+
+  .pop-container .see-btn {
+    justify-content: flex-end;
+    width: 67%;
+    margin-left: auto;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    height: 100%;
+  }
+
+  .pop-container h2 {
+    width: 50%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    line-height: 44px;
+    color: #172b4d;
+    margin: 15px 0;
+  }
+
+  .pop-container .see-btn .button-gren {
+    margin: 20px 0 70px 12px;
+    height: 40px;
+    width: auto;
+  }
+
   .header {
     justify-content: center;
     padding: 16px 0;
