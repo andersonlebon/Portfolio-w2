@@ -5,6 +5,7 @@ html {
   align-items: center;
   flex-direction: column;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .scrollHtml {
@@ -17,6 +18,7 @@ body {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
+  scroll-snap-type: y mandatory;
 }
 
 main {
