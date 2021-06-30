@@ -1,9 +1,7 @@
 const cancelIcon = document.querySelector('#cancel-icon');
-// const cancelPop = document.querySelector('.cancelPop');
 const menu = document.querySelector('.header');
 const main = document.querySelector('main');
 const humburger = document.querySelector('#hamburger');
-const seeButton = document.querySelectorAll('.show-popup');
 const html = document.querySelector('html');
 const cardContainer = document.querySelector('.card-container');
 const mobileData = [
@@ -195,40 +193,30 @@ const cards = [];
 mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
-    <div class='image'></div>
+    <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
     <div class='card-info'>
       <h2>Multi-Post Stories Gain+Glory</h2>
       <ul class='card-buttons'>
        ${asection.techno
-         .map(
-           (atechno) => `<li>
+    .map((atechno) => `<li>
           <button type='button'>${atechno}</button>
-        </li>`
-         )
-         .join('')}
+        </li>`).join('')}
       </ul>
       <button type='button' class='card-see button-gren show-popup'>
         See Project
       </button>
     </div>
   </div>`;
-  // cardContainer.appendChild(li);
   cards.push(li);
 });
-// const card = cardContainer.children;
-// console.log();
+
 cards.forEach((card) => {
   cardContainer.appendChild(card);
-  // let btn = card.children;
   const btn = card.querySelector('.show-popup');
-  // deletBtn = deletBtn.children;
-  // deletBtn = card.children;
-
   btn.id = `project${project}`;
   project += 1;
   btn.addEventListener('click', () => {
     const showSection = sections.filter((section) => section.id === btn.id);
-    console.log('hello');
     main.appendChild(showSection[0]);
     html.classList.add('scrollHtml');
   });

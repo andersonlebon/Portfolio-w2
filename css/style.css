@@ -202,13 +202,40 @@ ul {
 }
 
 .card:hover {
+  z-index: 999;
   transform: scale(1.05);
   transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.card .project-bg {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #8f8f8f9f;
+}
+
+.card .project-bg:hover {
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .card .image {
-  height: 60%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 100%;
+}
+
+.project-img {
+  width: 95%;
+  height: 95%;
+  opacity: 0.8;
 }
 
 .card-info {
@@ -238,15 +265,20 @@ ul {
   align-items: center;
 }
 
+.pop-button li {
+  margin-right: 8px;
+}
+
 .card-buttons li:nth-child(5),
 .card-buttons li:nth-child(6),
 .card-buttons li:nth-child(7),
 .card-buttons li:nth-child(8) {
   display: none;
 }
+
 .card-buttons button {
   padding: 8px 12px;
-  font-size: 13px;
+  font-size: 11px;
   color: #277e5a;
   font-weight: 600;
   border-radius: 4px;
@@ -537,7 +569,6 @@ button:focus {
   position: fixed;
   background: #c1c7d05e;
   height: 100vh;
-  /* padding: 3rem */
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -575,8 +606,12 @@ button:focus {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  /* margin: 5%; */
 }
+
+.cancelPop:hover {
+  cursor: pointer;
+}
+
 .cancelPop img {
   width: 90%;
   height: 90%;
@@ -598,7 +633,6 @@ button:focus {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -613,12 +647,6 @@ button:focus {
 .pop-button li:nth-child(7),
 .pop-button li:nth-child(8) {
   display: none;
-}
-
-.pop-container p {
-  font-size: 16px;
-  line-height: 24px;
-  color: #344563;
 }
 
 .pop-container .pop-img-container {
@@ -641,10 +669,6 @@ button:focus {
 .popup-window .pop-button {
   justify-content: flex-start;
   width: 90%;
-}
-
-.pop-button li {
-  margin-right: 8px;
 }
 
 .pop-container .see-btn {
@@ -687,23 +711,14 @@ button:focus {
     padding: 60px 24px;
   }
 
-  /* .popup-window {
-    background: #c1c7d05e;
-  }
-
-  .bgFilter {
-    background-color: transparent;
-  } */
-
   .pop-img-container {
     position: initial;
   }
 
   .cancelPop {
     z-index: 999;
-    /* background-color: black; */
     top: -50px;
-    right: 0px;
+    right: 0;
     margin: 0;
     width: 40px;
     height: 40px;
@@ -713,7 +728,6 @@ button:focus {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    /* margin: 5%; */
   }
 
   .cancelPop .iconCancel {
@@ -844,13 +858,20 @@ button:focus {
     font-size: 30px;
   }
 
+  .pop-container p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #344563;
+  }
+
   .about-langues .about p {
     width: 50%;
     padding: 0 100px;
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -863,9 +884,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
@@ -918,14 +943,6 @@ button:focus {
     display: grid;
   }
 
-  /* .popup-window {
-    background: #c1c7d05e;
-  }
-
-  .bgFilter {
-    background-color: transparent;
-  } */
-
   .pop-img-container {
     position: initial;
     order: -2;
@@ -937,7 +954,6 @@ button:focus {
     height: 40px;
     position: absolute;
     background: #ebecf0;
-    /* background-color: black; */
     top: -50px;
     right: 0;
     margin: 0;
@@ -945,7 +961,6 @@ button:focus {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    /* margin: 5%; */
   }
 
   .cancelPop .iconCancel {
@@ -1070,7 +1085,8 @@ button:focus {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
       url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
@@ -1079,9 +1095,13 @@ button:focus {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
       url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
       bottom 120px left 200px;
   }
 
