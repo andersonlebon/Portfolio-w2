@@ -7,6 +7,7 @@ const cardContainer = document.querySelector('.card-container');
 const mobileData = [// Array of data that is implemented in the pop-up window
   {
     id: 'project1',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot PortfolioMob.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -37,6 +38,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project2',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -67,6 +69,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project3',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfoliothree.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -97,6 +100,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project4',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -127,6 +131,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project5',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -157,6 +162,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project6',
+    secondTitle: 'Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -191,12 +197,12 @@ let project = 1;
 const sections = [];
 const cards = [];
 // Implementing the Flex card dynamically
-mobileData.forEach((asection) => {  
+mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
     <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
     <div class='card-info'>
-      <h2>Multi-Post Stories Gain+Glory</h2>
+      <h2>${asection.secondTitle}</h2>
       <ul class='card-buttons'>
        ${asection.techno
     .map((atechno) => `<li>
