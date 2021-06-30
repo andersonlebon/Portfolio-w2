@@ -191,7 +191,7 @@ let project = 1;
 const sections = [];
 const cards = [];
 // Implementing the Flex card dynamically
-mobileData.forEach((asection) => {  
+mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
     <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
