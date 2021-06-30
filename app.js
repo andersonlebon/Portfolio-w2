@@ -4,9 +4,7 @@ const main = document.querySelector('main');
 const humburger = document.querySelector('#hamburger');
 const html = document.querySelector('html');
 const cardContainer = document.querySelector('.card-container');
-
-
-const mobileData = [  // Array of data that is implemented in the pop-up window 
+const mobileData = [// Array of data that is implemented in the pop-up window
   {
     id: 'project1',
     images: {
