@@ -4,7 +4,9 @@ const main = document.querySelector('main');
 const humburger = document.querySelector('#hamburger');
 const html = document.querySelector('html');
 const cardContainer = document.querySelector('.card-container');
-const mobileData = [
+
+
+const mobileData = [  // Array of data that is implemented in the pop-up window 
   {
     id: 'project1',
     images: {
@@ -190,7 +192,8 @@ const mobileData = [
 let project = 1;
 const sections = [];
 const cards = [];
-mobileData.forEach((asection) => {
+// Implementing the Flex card dynamically
+mobileData.forEach((asection) => {  
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
     <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
@@ -210,6 +213,7 @@ mobileData.forEach((asection) => {
   cards.push(li);
 });
 
+// Filtering the data for the pop up window using "project id's"
 cards.forEach((card) => {
   cardContainer.appendChild(card);
   const btn = card.querySelector('.show-popup');
@@ -222,6 +226,7 @@ cards.forEach((card) => {
   });
 });
 
+// Creaiting the pop-up window
 mobileData.forEach((asection) => {
   const section = document.createElement('section');
   const container = document.createElement('div');
@@ -288,10 +293,12 @@ mobileData.forEach((asection) => {
   });
 });
 
+// Implementing the mobile menu by adding the class  "mob-menu"
 humburger.addEventListener('click', () => {
   menu.classList.add('mob-menu');
 });
 
+// Implementing the removal of the mobile menu by removing the class  "mob-menu"
 cancelIcon.addEventListener('click', () => {
   menu.classList.remove('mob-menu');
 });
