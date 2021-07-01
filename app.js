@@ -318,6 +318,7 @@ const contactForm = document.querySelector('.contactForm');
 const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
 const inputComment = document.querySelector('#message');
+const localData = {};
 function putErrorContainer(input) {
   const parent = input.parentElement;
   const div = document.createElement('div');
@@ -345,9 +346,9 @@ function success(input) {
   div.innerHTML = '';
 }
 
-const submitError = contactForm.querySelector('.button-gren');
+const submitError = contactForm.querySelector('.submit-container');
 const span = document.createElement('span');
-span.className = 'submitError';
+// span.className = 'submitError';
 submitError.appendChild(span);
 span.classList.add('error');
 // Impement Validation function
@@ -361,33 +362,27 @@ function inputValidation() {
 
   if (inputNameValue === '') {
     throwError(inputName);
-    span.innerText = '';
-    span.innerText = 'Input error, Not submitted';
   } else {
-    span.innerText = '';
     success(inputName);
   }
 
   if (inputEmailValue === '') {
     throwError(inputEmail);
-    span.innerText = '';
-    span.innerText = 'Input error, Not submitted';
+    span.classList.remove('remove');
+    span.innerText = 'Invalid, Email is required';
   } else if (!IsEmailValid) {
-    span.innerText = '';
-    span.innerText = 'Input error, Not submitted';
+    span.classList.remove('remove');
+    span.innerText = 'Invalid, email should be valid and in lowercase';
     const div = inputEmail.parentElement.querySelector('div');
     div.innerText = 'Invalid, email should be valid and in lowercase';
   } else {
-    span.innerText = '';
+    span.classList.add('remove');
     success(inputEmail);
   }
 
   if (inputCommentValue === '') {
-    span.innerText = '';
-    span.innerText = 'Input error, Not submitted';
     throwError(inputComment);
   } else {
-    span.innerText = '';
     success(inputComment);
   }
 }
@@ -397,6 +392,11 @@ const error = document.querySelectorAll('.error');
 // Implement submision of the form
 
 contactForm.addEventListener('submit', (e) => {
+  localData.name = inputName.value;
+  localData.email = inputEmail.value;
+  localData.comment = inputComment.value;
+  localStorage.setItem('mydata', JSON.stringify(localData));
+
   inputValidation();
   if (error[0].parentElement.innerText !== '') {
     error[0].parentElement.classList.add('anim-error');
@@ -438,12 +438,3 @@ contactForm.addEventListener('submit', (e) => {
     error[2].parentElement.classList.add('success');
   }
 });
-
-// const localData = {};
-// localData.name = inputName.value;
-// localData.email = inputEmail.value;
-// localData.comment = inputComment.value;
-
-// localStorage.setItem('mydata', localData);
-// const dataInput = localStorage.getItem('mydata');
-// console.log(localStorage.getItem('mydata'));

@@ -401,6 +401,13 @@ ul {
   padding: 0;
 }
 
+.submit-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .langag-content .langag-btn {
   width: 100%;
   display: flex;
@@ -409,8 +416,16 @@ ul {
   align-items: center;
 }
 
-.button-gren {
-  position: relative;
+.error {
+  color: #ef5350;
+  font-size: 14px;
+  margin: 4px 5px 12px 0;
+}
+
+.submit-container .error {
+  width: 200px;
+  margin: 0 10px;
+  text-align: center;
 }
 
 .button-gren:hover {
@@ -784,12 +799,6 @@ button:focus {
   outline: none;
 }
 
-.error {
-  color: #ef5350;
-  font-size: 14px;
-  margin: 4px 5px 12px 0;
-}
-
 .f-control {
   width: 100%;
   position: relative;
@@ -821,12 +830,22 @@ button:focus {
   }
 }
 
+.remove {
+  display: none;
+  width: 0;
+}
+
 @media only screen and (min-width: 1163px) {
   .popup-window .pop-container {
     margin: 8% 0;
     width: 60%;
     position: relative;
     padding: 60px 24px;
+  }
+
+  .submit-container {
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .pop-img-container {
