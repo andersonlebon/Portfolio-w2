@@ -712,13 +712,12 @@ button:focus {
 
 /* styling the menu of the mobile version */
 
-/* 
-input::after {
-  content: 'hello there';
-  background-color: #008552;
-  position: absolute;
-  bottom: -200px;
-  width: 100%;
+/* sinput::after {
+content: 'hello there';
+background-color: #008552;
+position: absolute;
+bottom: -200px;
+width: 100%;
 } */
 .success #message {
   border: 3px solid rgba(1, 155, 86, 0.945);
@@ -738,13 +737,10 @@ input::after {
   box-shadow: 1px 1px 10px rgba(7, 176, 100, 0.472);
   outline: none;
 }
+
 .focus-error .has-error {
   display: block;
   color: rgb(180, 1, 1);
-}
-
-.f-control .check-icons {
-  display: none;
 }
 
 .success .no-error {
@@ -760,10 +756,6 @@ input::after {
   display: none;
 }
 
-.success .check-icons {
-  display: block;
-}
-
 .focus-error #name,
 .focus-error #email {
   border: 3px solid rgba(185, 41, 5, 0.561);
@@ -775,32 +767,47 @@ input::after {
   color: #ef5350;
   font-size: 14px;
 }
+
 .f-control {
   width: 100%;
   position: relative;
 }
+
 .check-icons {
   position: absolute;
   top: 27px;
   right: 10px;
 }
 
+.success .check-icons {
+  display: block;
+}
+
 .anim-error {
   animation: animError 0.3s ease 1;
 }
+
+.f-control .check-icons {
+  display: none;
+}
+
 @keyframes animError {
   0% {
     transform: translateX(20px);
   }
+
   25% {
     transform: translateX(-20px);
   }
+
   50% {
     transform: translateX(20px);
   }
+
   75% {
     transform: translateX(-20px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -973,8 +980,7 @@ input::after {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
-      url(../images/illustration-about-me-2-desktop.svg);
+    background-image: url('../images/illustration-about-me-desktop.svg'), url('../images/illustration-about-me-2-desktop.svg');
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
     background-repeat: no-repeat, no-repeat;
@@ -986,10 +992,8 @@ input::after {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
-      url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
-      bottom 120px left 200px;
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png), url(../images/illustration-2-contact-form-desktop.png);
+    background-position: bottom 80px left, bottom 55px right, bottom 120px left 200px;
   }
 
   .email-link {
@@ -1183,8 +1187,7 @@ input::after {
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg),
-      url(../images/illustration-about-me-2-desktop.svg);
+    background-image: url(../images/illustration-about-me-desktop.svg), url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
     background-repeat: no-repeat, no-repeat;
@@ -1192,10 +1195,8 @@ input::after {
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png),
-      url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right,
-      bottom 120px left 200px;
+    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png), url(../images/illustration-2-contact-form-desktop.png);
+    background-position: bottom 80px left, bottom 55px right, bottom 120px left 200px;
   }
 
   .form-container {
