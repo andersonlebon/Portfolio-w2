@@ -438,3 +438,10 @@ contactForm.addEventListener('submit', (e) => {
     error[2].parentElement.classList.add('success');
   }
 });
+
+const dataInput = localStorage.getItem('mydata');
+const data = JSON.parse(dataInput);
+window.onload = () => {
+  inputName.value = data.name;
+  inputEmail.value = data.email;
+  inputComment.value= data.comment;
