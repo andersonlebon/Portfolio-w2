@@ -202,18 +202,13 @@ mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
     <div class='image'><div class="project-bg"></div><img class="project-img" src='${
-      asection.images.img
-    }'></div>
+  asection.images.img}'></div>
     <div class='card-info'>
       <h2>${asection.secondTitle}</h2>
       <ul class='card-buttons'>
-       ${asection.techno
-         .map(
-           (atechno) => `<li>
+       ${asection.techno.map((atechno) => `<li>
           <button type='button'>${atechno}</button>
-        </li>`
-         )
-         .join('')}
+        </li>`).join('')}
       </ul>
       <button type='button' class='card-see button-gren show-popup'>
         See Project
@@ -361,8 +356,7 @@ function inputValidation() {
   const inputEmailValue = inputEmail.value.trim();
   const inputCommentValue = inputComment.value.trim();
 
-  const expression =
-    /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$/;
+  const expression = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$/;
   const IsEmailValid = expression.test(inputEmailValue);
 
   if (inputNameValue === '') {
@@ -445,11 +439,11 @@ contactForm.addEventListener('submit', (e) => {
   }
 });
 
-const localData = {};
-localData.name = inputName.value;
-localData.email = inputEmail.value;
-localData.comment = inputComment.value;
+// const localData = {};
+// localData.name = inputName.value;
+// localData.email = inputEmail.value;
+// localData.comment = inputComment.value;
 
-localStorage.setItem('mydata', localData);
-const dataInput = localStorage.getItem('mydata');
-console.log(localStorage.getItem('mydata'));
+// localStorage.setItem('mydata', localData);
+// const dataInput = localStorage.getItem('mydata');
+// console.log(localStorage.getItem('mydata'));
