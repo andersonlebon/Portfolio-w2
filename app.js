@@ -201,19 +201,14 @@ const cards = [];
 mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
-    <div class='image'><div class="project-bg"></div><img class="project-img" src='${
-      asection.images.img
-    }'></div>
+    <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
     <div class='card-info'>
       <h2>${asection.secondTitle}</h2>
       <ul class='card-buttons'>
-       ${asection.techno
-         .map(
-           (atechno) => `<li>
+       ${asection.techno.map((atechno) => `<li>
           <button type='button'>${atechno}</button>
-        </li>`
-         )
-         .join('')}
+        </li>`)
+    .join('')}
       </ul>
       <button type='button' class='card-see button-gren show-popup'>
         See Project
@@ -317,6 +312,7 @@ cancelIcon.addEventListener('click', () => {
   menu.classList.remove('mob-menu');
 });
 
+//Implement the Validation of the form inputs
 const contactForm = document.querySelector('.contactForm');
 const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
@@ -326,32 +322,33 @@ function putErrorContainer(input) {
   const div = document.createElement('div');
   div.className = 'error';
   parent.appendChild(div);
-  console.log(parent);
 }
 
 putErrorContainer(inputName);
 putErrorContainer(inputEmail);
 putErrorContainer(inputComment);
 
+//Implement Error message on the front end
 function throwError(input) {
   const errorContainer = input.parentElement;
   const errorText = errorContainer.querySelector('div');
   errorText.innerHTML = `Please this '${input.name}' form is required`;
 }
 
+//Implement Success message on the front end
 function success(input) {
   const parent = input.parentElement;
   const div = parent.querySelector('div');
   div.innerHTML = '';
 }
 
+// Impement Validation function
 function inputValidation() {
   const inputNameValue = inputName.value.trim();
   const inputEmailValue = inputEmail.value.trim();
   const inputCommentValue = inputComment.value.trim();
 
-  const expression =
-    /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$/;
+  const expression = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$/;
   const IsEmailValid = expression.test(inputEmailValue);
 
   if (inputNameValue === '') {
@@ -366,7 +363,6 @@ function inputValidation() {
     const div = inputEmail.parentElement.querySelector('div');
     div.innerText = 'hey thre is i t working?';
   } else {
-    // putErrorContainer(inputEmail);
     success(inputEmail);
   }
 
@@ -378,8 +374,9 @@ function inputValidation() {
 }
 
 const error = document.querySelectorAll('.error');
+
+//Implement submision of the form
 contactForm.addEventListener('submit', (e) => {
-  // e.preventDefault();
   inputValidation();
   if (error[0].parentElement.innerText !== '') {
     error[0].parentElement.classList.add('anim-error');
