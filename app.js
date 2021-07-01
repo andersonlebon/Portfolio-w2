@@ -444,4 +444,5 @@ const data = JSON.parse(dataInput);
 window.onload = () => {
   inputName.value = data.name;
   inputEmail.value = data.email;
-  inputComment.value= data.comment;
+  inputComment.value = data.comment;
+};
