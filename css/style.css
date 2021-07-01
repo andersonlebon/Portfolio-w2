@@ -458,7 +458,6 @@ button:focus {
 
 .contactForm input {
   width: 100%;
-  margin: 12px 0;
   height: 48px;
   border: 1px solid #d0d9d4;
   box-sizing: border-box;
@@ -476,7 +475,6 @@ button:focus {
   box-sizing: border-box;
   padding: 12px;
   font-size: 16px;
-  margin: 12px 0 0 0;
   color: #091e42;
   line-height: 24px;
 }
@@ -710,15 +708,6 @@ button:focus {
   color: #344563;
 }
 
-/* styling the menu of the mobile version */
-
-/* sinput::after {
-content: 'hello there';
-background-color: #008552;
-position: absolute;
-bottom: -200px;
-width: 100%;
-} */
 .success #message {
   border: 3px solid rgba(1, 155, 86, 0.945);
   box-shadow: 1px 1px 10px rgba(7, 176, 100, 0.733);
@@ -741,6 +730,28 @@ width: 100%;
 .focus-error .has-error {
   display: block;
   color: rgb(180, 1, 1);
+}
+
+.check-icons {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.f-control .check-icons {
+  display: none;
+}
+
+.success .check-icons {
+  display: block;
+}
+
+.form-container .focus-error .check-icons {
+  display: block;
+}
+
+.check-icons i {
+  margin: 0 5px;
 }
 
 .success .no-error {
@@ -766,6 +777,7 @@ width: 100%;
 .error {
   color: #ef5350;
   font-size: 14px;
+  margin: 4px 5px 12px 0;
 }
 
 .f-control {
@@ -773,22 +785,8 @@ width: 100%;
   position: relative;
 }
 
-.check-icons {
-  position: absolute;
-  top: 27px;
-  right: 10px;
-}
-
-.success .check-icons {
-  display: block;
-}
-
 .anim-error {
   animation: animError 0.3s ease 1;
-}
-
-.f-control .check-icons {
-  display: none;
 }
 
 @keyframes animError {
@@ -980,7 +978,9 @@ width: 100%;
   }
 
   .about {
-    background-image: url('../images/illustration-about-me-desktop.svg'), url('../images/illustration-about-me-2-desktop.svg');
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
+      url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
     background-repeat: no-repeat, no-repeat;
@@ -992,8 +992,14 @@ width: 100%;
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png), url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right, bottom 120px left 200px;
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
+      url(../images/illustration-2-contact-form-desktop.png);
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
+      bottom 120px left 200px;
   }
 
   .email-link {
@@ -1187,7 +1193,9 @@ width: 100%;
   }
 
   .about {
-    background-image: url(../images/illustration-about-me-desktop.svg), url(../images/illustration-about-me-2-desktop.svg);
+    background-image:
+      url(../images/illustration-about-me-desktop.svg),
+      url(../images/illustration-about-me-2-desktop.svg);
     background-size: 70%, 14%;
     background-position: top right, bottom 25px left;
     background-repeat: no-repeat, no-repeat;
@@ -1195,8 +1203,14 @@ width: 100%;
   }
 
   .aboutContact {
-    background-image: url(../images/Frame@2x-1.png), url(../images/Frame@2x.png), url(../images/illustration-2-contact-form-desktop.png);
-    background-position: bottom 80px left, bottom 55px right, bottom 120px left 200px;
+    background-image:
+      url(../images/Frame@2x-1.png),
+      url(../images/Frame@2x.png),
+      url(../images/illustration-2-contact-form-desktop.png);
+    background-position:
+      bottom 80px left,
+      bottom 55px right,
+      bottom 120px left 200px;
   }
 
   .form-container {

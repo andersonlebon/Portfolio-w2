@@ -361,7 +361,7 @@ function inputValidation() {
     throwError(inputEmail);
   } else if (!IsEmailValid) {
     const div = inputEmail.parentElement.querySelector('div');
-    div.innerText = 'hey thre is i t working?';
+    div.innerText = 'Please your email should be valide';
   } else {
     success(inputEmail);
   }
