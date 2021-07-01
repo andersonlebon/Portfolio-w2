@@ -312,7 +312,8 @@ cancelIcon.addEventListener('click', () => {
   menu.classList.remove('mob-menu');
 });
 
-//Implement the Validation of the form inputs
+// Implement the Validation of the form inputs
+
 const contactForm = document.querySelector('.contactForm');
 const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
@@ -328,14 +329,16 @@ putErrorContainer(inputName);
 putErrorContainer(inputEmail);
 putErrorContainer(inputComment);
 
-//Implement Error message on the front end
+// Implement Error message on the front end
+
 function throwError(input) {
   const errorContainer = input.parentElement;
   const errorText = errorContainer.querySelector('div');
   errorText.innerHTML = `Please this '${input.name}' form is required`;
 }
 
-//Implement Success message on the front end
+// Implement Success message on the front end
+
 function success(input) {
   const parent = input.parentElement;
   const div = parent.querySelector('div');
@@ -375,7 +378,8 @@ function inputValidation() {
 
 const error = document.querySelectorAll('.error');
 
-//Implement submision of the form
+// Implement submision of the form
+
 contactForm.addEventListener('submit', (e) => {
   inputValidation();
   if (error[0].parentElement.innerText !== '') {
