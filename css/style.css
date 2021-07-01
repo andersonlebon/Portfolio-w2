@@ -48,8 +48,14 @@ main {
   padding-bottom: 200px;
 }
 
+.submitError {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 100%;
+}
+
 .s-container {
-  overflow-x: hidden;
   width: 90%;
   padding: 30px;
   margin: 0;
@@ -347,7 +353,6 @@ ul {
   line-height: 52px;
   text-align: center;
   color: #172b4d;
-  padding: 15px;
   margin-bottom: 20px;
 }
 
@@ -396,12 +401,31 @@ ul {
   padding: 0;
 }
 
+.submit-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .langag-content .langag-btn {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.error {
+  color: #ef5350;
+  font-size: 14px;
+  margin: 4px 5px 12px 0;
+}
+
+.submit-container .error {
+  width: 200px;
+  margin: 0 10px;
+  text-align: center;
 }
 
 .button-gren:hover {
@@ -459,7 +483,6 @@ button:focus {
 
 .contactForm input {
   width: 100%;
-  margin: 12px 0;
   height: 48px;
   border: 1px solid #d0d9d4;
   box-sizing: border-box;
@@ -477,7 +500,6 @@ button:focus {
   box-sizing: border-box;
   padding: 12px;
   font-size: 16px;
-  margin: 12px 0 0 0;
   color: #091e42;
   line-height: 24px;
 }
@@ -580,8 +602,8 @@ button:focus {
   transition: all 0.4s ease-in-out;
 }
 
-.scrollHtml .hide-pop {
-  transform: translate(-400px, 500px) rotateZ(50deg) scale(0.1);
+.anim-popup .popup-window {
+  transform: translate(-400px, 500px) rotateZ(50deg) scale(0.0001);
   opacity: 0;
 }
 
@@ -624,6 +646,14 @@ button:focus {
 .scrollHtml .display .main-section,
 .scrollHtml .header {
   filter: blur(10px);
+  z-index: -1;
+}
+
+.anim-popup .display .section-2,
+.anim-popup .display .about-langues,
+.anim-popup .display .main-section,
+.anim-popup .header {
+  filter: blur(0);
   z-index: -1;
 }
 
@@ -703,7 +733,107 @@ button:focus {
   color: #344563;
 }
 
-/* styling the menu of the mobile version */
+.success #message {
+  border: 3px solid rgba(1, 155, 86, 0.945);
+  box-shadow: 1px 1px 10px rgba(7, 176, 100, 0.733);
+  outline: none;
+}
+
+.focus-error #message {
+  border: 3px solid rgba(187, 39, 2, 0.548);
+  box-shadow: 1px 1px 10px rgba(175, 28, 2, 0.411);
+  outline: none;
+}
+
+.success #name,
+.success #email {
+  border: 3px solid rgba(1, 155, 86, 0.678);
+  box-shadow: 1px 1px 10px rgba(7, 176, 100, 0.472);
+  outline: none;
+}
+
+.focus-error .has-error {
+  display: block;
+  color: rgb(180, 1, 1);
+}
+
+.check-icons {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.f-control .check-icons {
+  display: none;
+}
+
+.success .check-icons {
+  display: block;
+}
+
+.form-container .focus-error .check-icons {
+  display: block;
+}
+
+.check-icons i {
+  margin: 0 5px;
+}
+
+.success .no-error {
+  display: block;
+  color: #008552;
+}
+
+.focus-error .no-error {
+  display: none;
+}
+
+.success .has-error {
+  display: none;
+}
+
+.focus-error #name,
+.focus-error #email {
+  border: 3px solid rgba(185, 41, 5, 0.561);
+  box-shadow: 1px 1px 10px rgba(192, 32, 4, 0.404);
+  outline: none;
+}
+
+.f-control {
+  width: 100%;
+  position: relative;
+}
+
+.anim-error {
+  animation: animError 0.3s ease 1;
+}
+
+@keyframes animError {
+  0% {
+    transform: translateX(20px);
+  }
+
+  25% {
+    transform: translateX(-20px);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  75% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.remove {
+  display: none;
+  width: 0;
+}
 
 @media only screen and (min-width: 1163px) {
   .popup-window .pop-container {
@@ -711,6 +841,11 @@ button:focus {
     width: 60%;
     position: relative;
     padding: 60px 24px;
+  }
+
+  .submit-container {
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .pop-img-container {

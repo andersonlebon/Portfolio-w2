@@ -4,10 +4,11 @@ const main = document.querySelector('main');
 const humburger = document.querySelector('#hamburger');
 const html = document.querySelector('html');
 const cardContainer = document.querySelector('.card-container');
-const mobileData = [// Array of data that is implemented in the pop-up window
+const mobileData = [
+  // Array of data that is implemented in the pop-up window
   {
     id: 'project1',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '1Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot PortfolioMob.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -38,7 +39,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project2',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '2Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -69,7 +70,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project3',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '3Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfoliothree.png',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -100,7 +101,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project4',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '4Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -131,7 +132,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project5',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '5Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -162,7 +163,7 @@ const mobileData = [// Array of data that is implemented in the pop-up window
   },
   {
     id: 'project6',
-    secondTitle: 'Multi-Post Stories Gain+Glory',
+    secondTitle: '6Multi-Post Stories Gain+Glory',
     images: {
       img: './images/Snapshoot Portfolio.svg',
       cancelPop: './images/icons/IconCancelblack.png',
@@ -200,12 +201,12 @@ const cards = [];
 mobileData.forEach((asection) => {
   const li = document.createElement('li');
   li.innerHTML = `<div class='card'>
-    <div class='image'><div class="project-bg"></div><img class="project-img" src='${asection.images.img}'></div>
+    <div class='image'><div class="project-bg"></div><img class="project-img" src='${
+  asection.images.img}'></div>
     <div class='card-info'>
       <h2>${asection.secondTitle}</h2>
       <ul class='card-buttons'>
-       ${asection.techno
-    .map((atechno) => `<li>
+       ${asection.techno.map((atechno) => `<li>
           <button type='button'>${atechno}</button>
         </li>`).join('')}
       </ul>
@@ -292,8 +293,12 @@ mobileData.forEach((asection) => {
   sections.push(section);
   cancelPop.addEventListener('click', () => {
     const child = main.children[3];
-    html.classList.remove('scrollHtml');
-    main.removeChild(child);
+    html.classList.add('anim-popup');
+    setTimeout(() => {
+      html.classList.remove('anim-popup');
+      html.classList.remove('scrollHtml');
+      main.removeChild(child);
+    }, 500);
   });
 });
 
@@ -306,3 +311,138 @@ humburger.addEventListener('click', () => {
 cancelIcon.addEventListener('click', () => {
   menu.classList.remove('mob-menu');
 });
+
+// Implement the Validation of the form inputs
+
+const contactForm = document.querySelector('.contactForm');
+const inputName = document.querySelector('#name');
+const inputEmail = document.querySelector('#email');
+const inputComment = document.querySelector('#message');
+const localData = {};
+function putErrorContainer(input) {
+  const parent = input.parentElement;
+  const div = document.createElement('div');
+  div.className = 'error';
+  parent.appendChild(div);
+}
+
+putErrorContainer(inputName);
+putErrorContainer(inputEmail);
+putErrorContainer(inputComment);
+
+// Implement Error message on the front end
+
+function throwError(input) {
+  const errorContainer = input.parentElement;
+  const errorText = errorContainer.querySelector('div');
+  errorText.innerHTML = `Please this '${input.name}' form is required`;
+}
+
+// Implement Success message on the front end
+
+function success(input) {
+  const parent = input.parentElement;
+  const div = parent.querySelector('div');
+  div.innerHTML = '';
+}
+
+const submitError = contactForm.querySelector('.submit-container');
+const span = document.createElement('span');
+// span.className = 'submitError';
+submitError.appendChild(span);
+span.classList.add('error');
+// Impement Validation function
+function inputValidation() {
+  const inputNameValue = inputName.value.trim();
+  const inputEmailValue = inputEmail.value.trim();
+  const inputCommentValue = inputComment.value.trim();
+
+  const expression = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*$/;
+  const IsEmailValid = expression.test(inputEmailValue);
+
+  if (inputNameValue === '') {
+    throwError(inputName);
+  } else {
+    success(inputName);
+  }
+
+  if (inputEmailValue === '') {
+    throwError(inputEmail);
+    span.classList.remove('remove');
+    span.innerText = 'Invalid, Email is required';
+  } else if (!IsEmailValid) {
+    span.classList.remove('remove');
+    span.innerText = 'Invalid, email should be valid and in lowercase';
+    const div = inputEmail.parentElement.querySelector('div');
+    div.innerText = 'Invalid, email should be valid and in lowercase';
+  } else {
+    span.classList.add('remove');
+    success(inputEmail);
+  }
+
+  if (inputCommentValue === '') {
+    throwError(inputComment);
+  } else {
+    success(inputComment);
+  }
+}
+
+const error = document.querySelectorAll('.error');
+
+// Implement submision of the form
+
+contactForm.addEventListener('submit', (e) => {
+  localData.name = inputName.value;
+  localData.email = inputEmail.value;
+  localData.comment = inputComment.value;
+  localStorage.setItem('mydata', JSON.stringify(localData));
+
+  inputValidation();
+  if (error[0].parentElement.innerText !== '') {
+    error[0].parentElement.classList.add('anim-error');
+    error[0].parentElement.classList.add('focus-error');
+    error[0].parentElement.classList.remove('success');
+
+    setTimeout(() => {
+      error[0].parentElement.classList.remove('anim-error');
+    }, 500);
+    e.preventDefault();
+  } else {
+    error[0].parentElement.classList.remove('focus-error');
+    error[0].parentElement.classList.add('success');
+  }
+  if (error[1].parentElement.innerText !== '') {
+    error[1].parentElement.classList.add('anim-error');
+    error[1].parentElement.classList.add('focus-error');
+    error[1].parentElement.classList.remove('success');
+
+    setTimeout(() => {
+      error[1].parentElement.classList.remove('anim-error');
+    }, 500);
+    e.preventDefault();
+  } else {
+    error[1].parentElement.classList.remove('focus-error');
+    error[1].parentElement.classList.add('success');
+  }
+  if (error[2].parentElement.innerText !== '') {
+    error[2].parentElement.classList.add('anim-error');
+    error[2].parentElement.classList.add('focus-error');
+    error[2].parentElement.classList.remove('success');
+
+    setTimeout(() => {
+      error[2].parentElement.classList.remove('anim-error');
+    }, 500);
+    e.preventDefault();
+  } else {
+    error[2].parentElement.classList.remove('focus-error');
+    error[2].parentElement.classList.add('success');
+  }
+});
+
+const dataInput = localStorage.getItem('mydata');
+const data = JSON.parse(dataInput);
+window.onload = () => {
+  inputName.value = data.name;
+  inputEmail.value = data.email;
+  inputComment.value = data.comment;
+};
