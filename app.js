@@ -440,9 +440,9 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 const dataInput = localStorage.getItem('mydata');
-const data = JSON.parse(dataInput);
+const mydata = JSON.parse(dataInput);
 window.onload = () => {
-  inputName.value = data.name;
-  inputEmail.value = data.email;
-  inputComment.value = data.comment;
+  inputName.value = mydata.name;
+  inputEmail.value = mydata.email;
+  inputComment.value = mydata.comment;
 };
