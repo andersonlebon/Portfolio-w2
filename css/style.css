@@ -48,8 +48,14 @@ main {
   padding-bottom: 200px;
 }
 
+.submitError {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 100%;
+}
+
 .s-container {
-  overflow-x: hidden;
   width: 90%;
   padding: 30px;
   margin: 0;
@@ -787,6 +793,10 @@ button:focus {
 
 .anim-error {
   animation: animError 0.3s ease 1;
+}
+
+.button-gren {
+  position: relative;
 }
 
 @keyframes animError {
