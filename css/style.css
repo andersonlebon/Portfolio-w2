@@ -185,6 +185,15 @@ ul {
   padding: 0;
 }
 
+.card .image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 .card-container li:nth-child(4) .image {
   height: 60%;
 }
@@ -233,15 +242,6 @@ ul {
   background-color: transparent;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
-}
-
-.card .image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
 }
 
 .project-img {
@@ -547,14 +547,14 @@ button:focus {
   transition: all 1s ease-in-out;
 }
 
-@keyframes  menuAn {
+@keyframes menuAn {
   0% {
     transform: translateX(-1000px);
   }
-    100% {
+
+  100% {
     transform: translateX(0);
   }
-  
 }
 
 .cancel-icon {
