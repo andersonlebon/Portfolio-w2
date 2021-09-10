@@ -113,7 +113,7 @@ const mobileData = [
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-        live: 'https://github.com/SamanAtashi/JS-Capstone-project/edit/development',
+        live: 'https://github.com/SamanAtashi/JS-Capstone-project/',
       },
     ],
     paragraph: `The iCinema is a single webapp that is based on the TVmaze API. With the use of the Involvement API to POST and GET the likes and comments, 
