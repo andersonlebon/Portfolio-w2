@@ -8,102 +8,100 @@ const mobileData = [
   // Array of data that is implemented in the pop-up window
   {
     id: 'project1',
-    secondTitle: '1Multi-Post Stories Gain+Glory',
+    secondTitle: 'Awesome Books Library',
     images: {
       img: 'https://user-images.githubusercontent.com/65068771/125845737-89416fa1-37cb-41ed-aef7-04267ec83748.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
-      'Ruby on Rails',
       'Css',
       'Javascript',
       'Github',
       'Bootstrap',
       'Terminal',
-      'Codepen',
-      'Codekit',
+      
     ],
-    heading: '11Keeping track of hundreds of components',
+    heading: 'Awesome Books Library',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live : 'https://andersonlebon.github.io/Awesome-book/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+        live : 'https://github.com/andersonlebon/Awesome-book',
       },
     ],
-    paragraph: `11Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-  when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `"Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list`,
   },
   {
     id: 'project2',
-    secondTitle: '2Multi-Post Stories Gain+Glory',
+    secondTitle: 'BookStore',
     images: {
       img: './images/Snapshoot Portfolio.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: [
-      'Ruby on Rails',
+    techno: 
       'Css',
       'Javascript',
       'Github',
       'Bootstrap',
       'Terminal',
-      'Codepen',
-      'Codekit',
     ],
-    heading: '222Keeping track of hundreds of components',
+    heading: 'BookStore,
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live : 'https://caleb-bookstore.herokuapp.com/books',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+         live : 'https://github.com/andersonlebon/BookStore',
       },
     ],
-    paragraph: `2222Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-  when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `This is a simple website build with `REACT` and `REDUX`  that displays a list of books from an API and allows you to add and remove books in the API store.`,
   },
   {
     id: 'project3',
-    secondTitle: '3Multi-Post Stories Gain+Glory',
+    secondTitle: 'CAR-PARKING',
     images: {
-      img: './images/Snapshoot Portfoliothree.png',
+      img: 'https://user-images.githubusercontent.com/65068771/131568626-757e19ec-c926-4276-901d-481b8f7593e1.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
-      'Ruby on Rails',
+      'Reactjs',
       'Css',
       'Javascript',
       'Github',
       'Bootstrap',
       'Terminal',
-      'Codepen',
-      'Codekit',
+      'Sass',
     ],
-    heading: '33Keeping track of hundreds of components',
+    heading: 'CAR-PARKING',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live : 'https://car-packing.netlify.app/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+        live : 'https://github.com/andersonlebon/CAR-PARKING',
       },
     ],
-    paragraph: `3Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-  when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `We are already using the intelligence of the connected car with companion apps that recognize when the car 
+    is in a paid parking area and later auto-stops when leaving. Creating a simple customer-focused payment solution for parking.`,
   },
   {
     id: 'project4',
-    secondTitle: '4Multi-Post Stories Gain+Glory',
+    secondTitle: 'ICinema',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: 'https://user-images.githubusercontent.com/65068771/129188234-7b023a52-916b-4d17-b651-75b56074b4e6.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
@@ -116,81 +114,83 @@ const mobileData = [
       'Codepen',
       'Codekit',
     ],
-    heading: '4Keeping track of hundreds of components',
+    heading: 'ICinema',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live : 'https://samanatashi.github.io/JS-Capstone-project/dist/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+        live : 'https://github.com/SamanAtashi/JS-Capstone-project/edit/development',
       },
     ],
-    paragraph: `4Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-    when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `The iCinema is a single webapp that is based on the TVmaze API. With the use of the Involvement API to POST and GET the likes and comments, 
+    users can comment and like a certain series.`,
   },
   {
     id: 'project5',
-    secondTitle: '5Multi-Post Stories Gain+Glory',
+    secondTitle: 'Charity in the world',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: 'https://user-images.githubusercontent.com/65068771/124763376-2b23ec00-df34-11eb-98e9-f124a398e502.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
-      'Ruby on Rails',
       'Css',
       'Javascript',
       'Github',
       'Bootstrap',
       'Terminal',
-      'Codepen',
-      'Codekit',
     ],
-    heading: '5Keeping track of hundreds of components',
+    heading: 'Charity in the world',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live : 'https://andersonlebon.github.io/CHARITY-CAPSTON-PROJECT/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+        live: 'https://github.com/andersonlebon/CHARITY-CAPSTON-PROJECT'
       },
     ],
-    paragraph: `5Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-    when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `CHARITY IN THE WORLD is a website that provides the resources and platform to empower families to raise funds for their adoption and engage their community with the powerful story of why they are choosing adoption. As one of the purest expressions of the love and compassion of the Gospel, 
+    adoption has always provided the life-altering solution to this need.`,
   },
   {
     id: 'project6',
-    secondTitle: '6Multi-Post Stories Gain+Glory',
+    secondTitle: 'TODO-LIST',
     images: {
-      img: './images/Snapshoot Portfolio.svg',
+      img: 'https://user-images.githubusercontent.com/65068771/130613281-01b9b321-df1a-4fc4-87c7-7cf5a6c83f73.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
-      'Ruby on Rails',
+      'Reactjs',
       'Css',
       'Javascript',
       'Github',
       'Bootstrap',
       'Terminal',
-      'Codepen',
-      'Codekit',
+      'Sass',
     ],
-    heading: '6Keeping track of hundreds of components',
+    heading: 'TODO-LIST',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
+        live: 'https://andersonlebon.github.io/todo-with-react/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
+        live: 'https://github.com/andersonlebon/todo-with-react',
       },
     ],
-    paragraph: `6Lorem Ipsum is simply dummy text of the printing and typesetting industry's. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-    when an unknown printer took a galley of type and scrambled it 1960s with the relea`,
+    paragraph: `ToDo List App is a kind of app that is generally used to maintain our day-to-day tasks or list everything that we have to do, 
+    We can add more tasks at any time and delete a task that is completed.`,
   },
 ];
 
