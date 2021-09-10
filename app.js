@@ -10,7 +10,7 @@ const mobileData = [
     id: 'project1',
     secondTitle: '1Multi-Post Stories Gain+Glory',
     images: {
-      img: './images/Snapshoot PortfolioMob.png',
+      img: 'https://user-images.githubusercontent.com/65068771/125845737-89416fa1-37cb-41ed-aef7-04267ec83748.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
