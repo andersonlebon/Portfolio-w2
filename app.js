@@ -257,7 +257,8 @@ mobileData.forEach((asection) => {
   const divGreenBtn = document.createElement('div');
   divGreenBtn.className = 'see-btn';
   asection.list.forEach((element) => {
-    const btn = document.createElement('button');
+    const btn = document.createElement('a');
+    btn.href = element.live;
     btn.innerHTML = `<span>${element.text}</span> <img src=${element.icon}>`;
     btn.className = 'card-see button-gren';
     listBtn.push(btn);

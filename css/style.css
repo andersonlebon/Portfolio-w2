@@ -21,6 +21,10 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   width: 100%;
   overflow: hidden;
@@ -208,6 +212,8 @@ ul {
   justify-content: center;
   align-items: center;
 }
+
+
 
 .card {
   width: 327px;
