@@ -539,10 +539,22 @@ button:focus {
 .mob-menu {
   height: 95vh;
   background-color: #ffff;
-  position: relative;
+  position: fixed;
   align-items: flex-start;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   border-radius: 0 0 50px 50px;
+  animation: menuAn 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes  menuAn {
+  0% {
+    transform: translateX(-1000px);
+  }
+    100% {
+    transform: translateX(0);
+  }
+  
 }
 
 .cancel-icon {
