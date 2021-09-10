@@ -13,57 +13,46 @@ const mobileData = [
       img: 'https://user-images.githubusercontent.com/65068771/125845737-89416fa1-37cb-41ed-aef7-04267ec83748.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: [
-      'Css',
-      'Javascript',
-      'Github',
-      'Bootstrap',
-      'Terminal',
-      
-    ],
+    techno: ['Css', 'Javascript', 'Github', 'Bootstrap', 'Terminal'],
     heading: 'Awesome Books Library',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
-        live : 'https://andersonlebon.github.io/Awesome-book/',
+        live: 'https://andersonlebon.github.io/Awesome-book/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-        live : 'https://github.com/andersonlebon/Awesome-book',
+        live: 'https://github.com/andersonlebon/Awesome-book',
       },
     ],
-    paragraph: `"Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list`,
+    paragraph:
+      '"Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list',
   },
   {
     id: 'project2',
     secondTitle: 'BookStore',
     images: {
-      img: './images/Snapshoot Portfolio.png',
+      img: 'https://user-images.githubusercontent.com/65068771/132000196-3c14dc6f-32e1-42c9-afb5-97904db7c044.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: 
-      'Css',
-      'Javascript',
-      'Github',
-      'Bootstrap',
-      'Terminal',
-    ],
-    heading: 'BookStore,
+    techno: ['Css', 'Javascript', 'Github', 'Bootstrap', 'Terminal'],
+    heading: 'BookStore',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
-        live : 'https://caleb-bookstore.herokuapp.com/books',
+        live: 'https://caleb-bookstore.herokuapp.com/books',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-         live : 'https://github.com/andersonlebon/BookStore',
+        live: 'https://github.com/andersonlebon/BookStore',
       },
     ],
-    paragraph: `This is a simple website build with `REACT` and `REDUX`  that displays a list of books from an API and allows you to add and remove books in the API store.`,
+    paragraph:
+      "This is a simple website build with 'REACT' and 'REDUX'  that displays a list of books from an API and allows you to add and remove books in the API store.",
   },
   {
     id: 'project3',
@@ -86,12 +75,12 @@ const mobileData = [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
-        live : 'https://car-packing.netlify.app/',
+        live: 'https://car-packing.netlify.app/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-        live : 'https://github.com/andersonlebon/CAR-PARKING',
+        live: 'https://github.com/andersonlebon/CAR-PARKING',
       },
     ],
     paragraph: `We are already using the intelligence of the connected car with companion apps that recognize when the car 
@@ -101,7 +90,7 @@ const mobileData = [
     id: 'project4',
     secondTitle: 'ICinema',
     images: {
-      img: 'https://user-images.githubusercontent.com/65068771/129188234-7b023a52-916b-4d17-b651-75b56074b4e6.png',
+      img: './images/icinema.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
@@ -119,12 +108,12 @@ const mobileData = [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
-        live : 'https://samanatashi.github.io/JS-Capstone-project/dist/',
+        live: 'https://samanatashi.github.io/JS-Capstone-project/dist/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-        live : 'https://github.com/SamanAtashi/JS-Capstone-project/edit/development',
+        live: 'https://github.com/SamanAtashi/JS-Capstone-project/edit/development',
       },
     ],
     paragraph: `The iCinema is a single webapp that is based on the TVmaze API. With the use of the Involvement API to POST and GET the likes and comments, 
@@ -137,24 +126,18 @@ const mobileData = [
       img: 'https://user-images.githubusercontent.com/65068771/124763376-2b23ec00-df34-11eb-98e9-f124a398e502.png',
       cancelPop: './images/icons/IconCancelblack.png',
     },
-    techno: [
-      'Css',
-      'Javascript',
-      'Github',
-      'Bootstrap',
-      'Terminal',
-    ],
+    techno: ['Css', 'Javascript', 'Github', 'Bootstrap', 'Terminal'],
     heading: 'Charity in the world',
     list: [
       {
         icon: './images/icons/IconExport.svg',
         text: 'See Live',
-        live : 'https://andersonlebon.github.io/CHARITY-CAPSTON-PROJECT/',
+        live: 'https://andersonlebon.github.io/CHARITY-CAPSTON-PROJECT/',
       },
       {
         text: 'See Source',
         icon: './images/icons/IconGitHub.svg',
-        live: 'https://github.com/andersonlebon/CHARITY-CAPSTON-PROJECT'
+        live: 'https://github.com/andersonlebon/CHARITY-CAPSTON-PROJECT',
       },
     ],
     paragraph: `CHARITY IN THE WORLD is a website that provides the resources and platform to empower families to raise funds for their adoption and engage their community with the powerful story of why they are choosing adoption. As one of the purest expressions of the love and compassion of the Gospel, 
