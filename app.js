@@ -94,7 +94,6 @@ const mobileData = [
       cancelPop: './images/icons/IconCancelblack.png',
     },
     techno: [
-      'Ruby on Rails',
       'Css',
       'Javascript',
       'Github',
